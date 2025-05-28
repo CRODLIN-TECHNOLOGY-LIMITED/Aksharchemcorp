@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import * as motion from "motion/react-client"
 import { Lightbulb, Star, User, Globe, Handshake } from 'lucide-react';
@@ -6,63 +8,96 @@ import { Lightbulb, Star, User, Globe, Handshake } from 'lucide-react';
 const About = () => {
   return (
     <section
-     id="about" 
-     className="relative py-16 px-4 md:px-8 bg-gradient-to-br from-blue-300 to-white  overflow-hidden z-0"
-     
+      id="about"
+      className="flex flex-col  py-16 px-4  bg-gradient-to-br from-white to-blue-200 overflow-hidden" // More white background with a subtle blue hint
     >
       {/* Decorative background blobs - these add a subtle, organic visual effect */}
       {/* Requires the 'blob' animation keyframes in tailwind.config.js */}
-      <div className="absolute top-0 left-0 w-48 h-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-0 left-0 w-48 h-48 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-blob"></div> {/* Subtler blue blob */}
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-blob animation-delay-2000"></div> {/* Subtler indigo blob */}
 
-      {/* Main content container, centered and with max-width for readability */}
-      <div className="container mx-auto max-w-full relative z-10"> {/* z-10 ensures content is above the blobs */}
+      {/* Main content container, centered and with max-w-4xl for readability */}
+      <div className="container max-w-screen relative z-10"> {/* z-10 ensures content is above the blobs, max-w-4xl for readability */}
         {/* Main Heading */}
         <motion.h2
-         className="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-6 text-center tracking-tight"
-         initial={{x:100,opacity:0}}
-         whileInView={{x:0,opacity:1}}
-         transition={{duration:0.6, ease:"easeInOut"}}
-         >
-          About <span className="text-indigo-600">Transchem Impex</span>
+          className="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-6 text-center tracking-tight"
+          initial={{x:100,opacity:0}}
+          whileInView={{x:0,opacity:1}}
+          transition={{duration:0.6, ease:"easeInOut"}}
+        >
+          About <span className="text-blue-600">Transchem Impex</span> {/* Adjusted span color for more cohesive blue theme */}
         </motion.h2>
 
         {/* Tagline/Introductory sentence */}
-        <motion.p 
-        className="text-xl text-gray-700 mb-8 text-center max-w-3xl mx-auto leading-relaxed"
-        initial={{x:100,opacity:0}}
-         whileInView={{x:0,opacity:1}}
-         transition={{duration:0.6, ease:"easeInOut"}}
+        <motion.p
+          className="text-xl text-gray-700 mb-8 text-center max-w-3xl mx-auto leading-relaxed"
+          initial={{x:100,opacity:0}}
+          whileInView={{x:0,opacity:1}}
+          transition={{duration:0.6, ease:"easeInOut"}}
         >
           <strong className="text-blue-600">Transchem Impex Private Limited</strong> — your trusted partner in the world of chemicals, solvents, and industrial materials.
         </motion.p>
 
-        {/* Main content block with a distinct background, shadow, and border */}
-        <motion.div 
-        className="bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-blue-200"
-        initial={{scale:0.5}}
-        whileInView={{scale:1}}
-        transition={{duration:0.6, ease:"easeInOut"}}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        {/* Main content block - now without card styling */}
+        <motion.div // Adjusted duration for smoother effect
+
+>
+          <div className=" items-start space-y-8 mb-10">
             {/* Left Column: Our Vision & Journey */}
-            <div>
-              <h3 className="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+
+
+            <motion.div
+              className="p-4 md:p-8 will-change-transform flex flex-col bg-blue-400 rounded-2xl shadow-xl w-full h-[100vh] justify-center items-center" // Removed bg-white, shadow, border, and adjusted padding
+              initial={{y:200,opacity:0}} // Changed animation for a subtle fade-in from below
+              whileInView={{y:0,opacity:1}}
+              transition={{duration:0.8, ease:"easeOut"}}>
+
+              <div className=' flex justify-between items-center flex-col p-5'>
+              <div className='w-full flex items-center justify-center m-7'>
+              <h3 className="text-5xl font-stretch-semi-condensed font-light text-indigo-600 mb-4 flex items-center text-center">
                 <Lightbulb className="mr-3 text-yellow-500" size={28} /> Our Vision & Journey
               </h3>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Founded on <strong className="text-indigo-600">July 8th, 2011</strong>, Transchem Impex was born from a clear vision: to deliver premium-quality products at highly competitive rates. Today, we proudly stand as a dependable and forward-thinking name in the chemical supply industry.
+              </div>
+              <motion.div className=' bg-white/15 flex flex-col sm:w-[80%] items-center justify-center p-10 px-20 rounded-xl'
+                animate={{
+                  y: [10, 0, 10],
+                }}
+
+                transition={{
+                  duration: 2, // Animation duration
+                  repeat: Infinity, // Loop the animation infinitely
+                  ease: 'easeInOut', // Smooth easing
+                }}
+              >
+              <p className="text-lg italic leading-loose mb-6 text-white font-medium tracking-wide">
+                Founded on <span className="text-blue-800 font-semibold not-italic">July 8th, 2011</span>, 
+                <span className="text-blue-600 font-bold not-italic"> Transchem Impex </span> was born from a clear vision — 
+                to deliver premium-quality products at highly competitive rates. Today, we proudly stand 
+                as a dependable and forward-thinking name in the chemical supply industry.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                We serve a wide range of sectors with unwavering **efficiency, transparency, and integrity**. Our journey has been one of continuous evolution, adapting to changing market needs and expanding our reach from local sourcing to global imports starting in **2022–2023**.
+
+              <p className="text-lg italic leading-loose text-white font-medium tracking-wide">
+                We serve a wide range of sectors with unwavering efficiency, transparency, and integrity. 
+                Our journey has been one of continuous evolution — adapting to changing market needs and 
+                expanding our reach from local sourcing to global imports starting in 
+                <span className="text-indigo-800 font-semibold not-italic"> 2022–2023</span>.
               </p>
-            </div>
+              </motion.div>
+              </div>
+            </motion.div>
 
             {/* Right Column: What Makes Us Different / Key Values */}
-            <div>
-              <h3 className="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+            <motion.div
+              className="p-4 md:p-8 will-change-transform flex flex-col justify-center items-center" // Removed bg-white, shadow, border, and adjusted padding
+              initial={{y:100,opacity:0}} // Changed animation for a subtle fade-in from below
+              whileInView={{y:0,opacity:1}}          
+              transition={{duration:0.8, ease:"easeOut"}}
+            >
+              <div className='w-full flex items-center justify-center'>
+              <h3 className="text-4xl font-stretch-semi-condensed font-semibold text-blue-700 mb-4 flex items-center text-center">
                 <Star className="mr-3 text-green-500" size={28} /> What Makes Us Different
               </h3>
+              </div>
               <ul className="space-y-4 text-lg text-gray-700">
                 <li className="flex items-start">
                   <User className="mr-3 mt-1 text-blue-500 flex-shrink-0" size={24} />
@@ -71,24 +106,28 @@ const About = () => {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <Globe className="mr-3 mt-1 text-purple-500 flex-shrink-0" size={24} />
+                  <Globe className="mr-3 mt-1 text-blue-500 flex-shrink-0" size={24} /> {/* Changed to blue for consistency */}
                   <div>
                     <strong className="text-blue-600">Global Reach:</strong> Direct access to quality materials, on time and at the right price, through our expanding import capabilities.
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <Handshake className="mr-3 mt-1 text-orange-500 flex-shrink-0" size={24} />
+                  <Handshake className="mr-3 mt-1 text-blue-500 flex-shrink-0" size={24} /> {/* Changed to blue for consistency */}
                   <div>
                     <strong className="text-blue-600">Partnership Built on Trust:</strong> We believe in fostering strong, reliable relationships with our clients.
                   </div>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
 
           {/* Concluding message / Call to Action */}
-          <div className="mt-10 text-center">
-            <p className="text-2xl font-semibold text-indigo-700 mb-4">
+          <motion.div className="mt-10 text-center"
+          initial={{y:100,opacity:0}} // Changed animation for a subtle fade-in from below
+          whileInView={{y:0,opacity:1}}
+          transition={{duration:0.8, ease:"easeOut"}}
+          >
+            <p className="text-2xl font-semibold text-blue-700 mb-4"> {/* Adjusted color */}
               At Transchem Impex, we don’t just supply materials—we help you move forward with confidence.
             </p>
             <p className="text-3xl font-extrabold text-blue-800">
@@ -97,7 +136,7 @@ const About = () => {
             <p className="text-xl font-medium text-gray-600 mt-4">
               Welcome to Transchem Impex Private Limited.
             </p>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
