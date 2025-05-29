@@ -58,7 +58,8 @@ const About = () => {
                 <Lightbulb className="mr-3 text-yellow-500" size={28} /> Our Vision & Journey
               </h3>
               </div>
-              <motion.div className=' bg-white/15 flex flex-col sm:w-[80%] items-center justify-center p-10 px-20 rounded-xl'
+              <motion.div className=' bg-white/15 flex flex-col sm:w-[80%] items-center justify-center sm:p-10 
+              px-2 sm:px-20 rounded-xl'
                 animate={{
                   y: [10, 0, 10],
                 }}
