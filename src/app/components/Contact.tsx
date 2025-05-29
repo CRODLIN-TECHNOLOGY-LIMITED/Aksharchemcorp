@@ -60,7 +60,7 @@ function ContactUsSection() {
          transition={{duration:0.5}}
          >
         
-          Looking for a specific chemical or have a question? We're here to help. Reach out to us today.
+          Looking for a specific chemical or have a question? We&apos;re here to help. Reach out to us today.
         </motion.p>
 
         {/* Contact Information Cards */}
