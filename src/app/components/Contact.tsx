@@ -1,8 +1,11 @@
+"use client"
+
 import React from 'react';
 // Import icons from lucide-react for visual appeal
 import { MapPin, Phone, Mail } from 'lucide-react';
 import * as motion from "motion/react-client"
 import dynamic from "next/dynamic";
+
 const Map = dynamic(() => import('./Map'), { ssr: false });
 
 function ContactUsSection() {
