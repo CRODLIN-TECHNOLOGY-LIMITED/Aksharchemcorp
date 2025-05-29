@@ -9,6 +9,11 @@ import dynamic from "next/dynamic";
 const Map = dynamic(() => import('./Map'), { ssr: false });
 
 function ContactUsSection() {
+
+  const Gmap = ()=>{
+    window.location.href='https://maps.app.goo.gl/mYASuUYFsTraSU7d6'
+  }
+
   return (
     <section id="contact" className="relative py-16 px-4 md:px-8 bg-gradient-to-br from-white to-blue-50 overflow-hidden">
       {/* Subtle background element for visual interest */}
@@ -106,7 +111,10 @@ function ContactUsSection() {
   </div>
 
   {/* Right Side - Map */}
-  <div className="w-full md:w-1/2 bg-gray-100 rounded-xl shadow-lg flex items-center justify-center">
+  <div className="w-full md:w-1/2 bg-gray-100 rounded-xl shadow-lg flex items-center justify-center
+   hover:cursor-pointer"
+  onClick={Gmap}
+  >
     {/* Replace this div with your actual Map component */}
     <Map></Map>
   </div>

@@ -21,7 +21,7 @@ const Product = () => {
            whileHover={{scale:1.3}}
            whileTap={{rotate:5}}
            transition={{duration:0.5,ease:"easeInOut"}}
-          className="hover:cursor-pointer bg-blue-400 text-white shadow p-4 rounded-xl flex items-center justify-between flex-col">
+          className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
             <img src={Chemical.src} className="h-[13vh]" alt="" />
             <h4 className="text-xl font-bold mb-2">Chemicals & Intermidiates</h4>
             <p>Reliable supply of top-grade industrial chemical solutions.</p>
@@ -32,7 +32,7 @@ const Product = () => {
            whileHover={{scale:1.3}}
            whileTap={{rotate:5}}
            transition={{duration:0.5,ease:"easeInOut"}}
-          className="hover:cursor-pointer bg-blue-400 text-white shadow p-4 rounded-xl flex items-center justify-between flex-col">
+          className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
             <img src={Test.src} className="h-[13vh]" alt="" /> 
             <h4 className="text-xl font-bold mb-2">Solvents</h4>
             <p>Wide range of acids, solvents, and specialty chemicals.</p>
@@ -43,7 +43,7 @@ const Product = () => {
            whileHover={{scale:1.3}}
            whileTap={{rotate:5}}
            transition={{duration:0.5,ease:"easeInOut"}}
-          className="hover:cursor-pointer bg-blue-400 text-white shadow p-4 rounded-xl flex items-center justify-between flex-col">
+          className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
             <img src={Atom.src} className="h-[13vh]" alt="" /> 
             <h4 className="text-xl font-bold mb-2">Polymers</h4>
             <p>Tailored chemical supply services for unique requirements.</p>
@@ -54,7 +54,7 @@ const Product = () => {
            whileHover={{scale:1.3}}
            whileTap={{rotate:5}}
            transition={{duration:0.5,ease:"easeInOut"}}
-          className="hover:cursor-pointer bg-blue-400 text-white shadow p-4 rounded-xl flex items-center justify-between flex-col">
+          className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
             <img src={Chemistry.src} className="h-[13vh]" alt="" />  
             <h4 className="text-xl font-bold mb-2">Speciality chemicals</h4>
             <p>Tailored chemical supply services for unique requirements.</p>

@@ -6,7 +6,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 export default function Map() {
   return (
-    <MapContainer center={[19.182737128111125, 72.95392316035633]} zoom={50}>
+    <MapContainer center={[19.180425381149217, 72.95383080813369]} zoom={50}>
       {/* OPEN STREEN MAPS TILES */}
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
