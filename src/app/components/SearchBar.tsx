@@ -2,12 +2,26 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Search } from 'lucide-react' // optional icon package
+import Fuse from 'fuse.js'
+import chemicals from './data.json'
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
   const [Width, setWidth] = useState("40%")
   const [bg, setBg] = useState(false)
+  
+  // Combine all chemical arrays into a single array for Fuse
+  const allChemicals = [
+    ...chemicals.chemicals.solvents,
+    ...chemicals.chemicals.petrochemicals,
+    ...chemicals.chemicals.powder,
+    ...chemicals.chemicals.specialty_chemicals
+  ];
+
+  // console.log(allChemicals)
+
+  const fuse = new Fuse(allChemicals)
 
   function Clickevent(){
     Width==="40%"?setWidth("70%"):setWidth("40%")
@@ -34,7 +48,9 @@ const SearchBar = () => {
         <input
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) =>{ setQuery(e.target.value)
+            console.log(fuse.search(e.target.value))}
+          }
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           className="flex-1 outline-none bg-transparent text-gray-500 placeholder-gray-400 border-none "
