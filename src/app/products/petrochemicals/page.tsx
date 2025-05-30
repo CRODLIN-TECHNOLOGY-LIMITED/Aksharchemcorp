@@ -26,15 +26,21 @@ const Petrochemicals = () => {
         </motion.div>
 
       <div className="max-w-4xl mx-auto">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {chemData.map((elem, idx) => (
-            <div
-              key={idx}
-              className="bg-blue-400 shadow-md rounded-2xl p-6 text-center hover:scale-105 hover:shadow-lg transition-transform duration-300"
-            >
-              <p className="text-lg hover:cursor-pointer text-white font-semibold">{elem}</p>
-            </div>
-          ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {chemData.map((elem, idx) => (
+        <div
+          key={idx}
+          className="flex items-center space-x-4 p-4 rounded-xl transition-transform duration-300 hover:scale-105 hover:bg-blue-50" // Subtle background on hover
+        >
+          {/* Large, prominent icon */}
+          {/* <FlaskConical className="text-blue-600 flex-shrink-0" size={48} strokeWidth={1.5} /> */}
+
+          {/* Text content */}
+          <li className="text-xl font-semibold text-gray-800 hover:text-blue-700 cursor-pointer">
+            {elem}
+          </li>
+        </div>
+      ))}
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ const Product = () => {
           </motion.div>
         </Link>
 
-          <Link href="/products/petrochemicals" className="contents">
+          <Link href="/products/powder" className="contents">
           <motion.div
            initial={{scale:1,opacity:0,x:100}}
            whileInView={{scale:1,x:0,opacity:1}}
