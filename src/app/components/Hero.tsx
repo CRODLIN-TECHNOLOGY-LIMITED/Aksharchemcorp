@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SearchBar from './SearchBar';
+import data from './data.json'
 import "../globals.css";
 
 const Hero = () => {
@@ -25,6 +27,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-[110vh] flex items-center justify-center text-center z-0 text-white overflow-hidden">
+   
       {/* Background images with transitions */}
       {images.map((image, index) => (
         <motion.div
@@ -43,6 +46,15 @@ const Hero = () => {
       
       {/* Content overlay */}
       <div className="relative p-6 rounded z-10">
+             <SearchBar
+               data={Object.entries(data.chemicals).map(([key, values], idx) => ({
+                 id: idx.toString(),
+                 title: key,
+                 items: values
+               }))}
+             />
+             
+             {/* Display search results */}
         <motion.h2 
           className="text-4xl md:text-5xl font-bold mb-4"
           initial={{ opacity: 0, x: 200 }}
