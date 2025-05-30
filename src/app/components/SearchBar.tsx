@@ -1,15 +1,18 @@
 'use client'
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import * as motion from "motion/react-client"
+import { AnimatePresence } from 'motion/react'
 import { Search } from 'lucide-react' // optional icon package
 import Fuse from 'fuse.js'
 import chemicals from './data.json'
+import { div } from 'motion/react-client'
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
   const [Width, setWidth] = useState("40%")
   const [bg, setBg] = useState(false)
+  const [data, setData] = useState<any[]>([])
   
   // Combine all chemical arrays into a single array for Fuse
   const allChemicals = [
@@ -33,12 +36,12 @@ const SearchBar = () => {
       className="max-w-md mx-auto "
       initial={{ opacity: 1, x: 200, width:"40%" }}
       whileInView={{ opacity: 1, x: 0 }}
-      animate={{ opacity: 1, width:Width }}
+      animate={{ opacity: 1, width:"70%" }}
       transition={{ duration: 0.5 }}
       onClick={Clickevent}
     >
       <motion.div
-        className={`flex items-center border px-4 py-2  rounded-full ${bg ? 'bg-white/90' : 'bg-white/50'} shadow-md ${
+        className={`flex items-center border px-4 py-2  rounded-full ${focused ? 'bg-white/90' : 'bg-white/70'} shadow-md ${
           focused ? 'ring-1 ring-gray-100' : 'border-gray-300'
         }`}
         animate={{ scale: focused ? 1.02 : 1 }}
@@ -49,7 +52,9 @@ const SearchBar = () => {
           type="text"
           value={query}
           onChange={(e) =>{ setQuery(e.target.value)
-            console.log(fuse.search(e.target.value))}
+            console.log(fuse.search(e.target.value))
+            setData(fuse.search(e.target.value))
+          }
           }
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
@@ -57,6 +62,25 @@ const SearchBar = () => {
           placeholder="Search..."
         />
       </motion.div>
+      <div>
+        <AnimatePresence>
+        {data.length > 0 && focused && (
+         <motion.div className=' h-[20vh] overflow-scroll rounded m-5'
+         initial={{opacity:0}}
+         animate={{opacity:1}}
+         transition={{duration:0.5,ease:"easeInOut"}}
+         > 
+          <ul className="mt-2 bg-white/90 rounded shadow ">
+            {data.map((result: any, idx: number) => (
+              <li key={idx} className="text-gray-700 py-4 px-2 hover:bg-gray-100 shadow">
+                {result.item?.name || JSON.stringify(result.item)}
+              </li>
+            ))}
+          </ul>
+          </motion.div>
+        )}
+        </AnimatePresence>
+      </div>
     </motion.div>
   )
 }
