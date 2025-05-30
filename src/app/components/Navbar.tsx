@@ -1,6 +1,7 @@
 import React from 'react'
 import Chem from "../images/biochemistry.png"
 import "../globals.css"
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
@@ -10,31 +11,31 @@ const Navbar = () => {
     {/* Logo + Brand */}
     <div className="flex items-center gap-3">
       <img src={Chem.src} alt="logo" className="h-[8vh] sm:h-[9vh] drop-shadow-lg" />
-      <h1 className="hidden sm:block text-2xl sm:text-3xl font-extrabold tracking-wide">
+      <h1 className="hidden sm:block text-2xl sm:text-3xl font-bold tracking-wide">
         Transchem Impex
       </h1>
     </div>
 
     {/* Navigation */}
     <nav className="flex items-center gap-4 sm:gap-8 text-sm sm:text-base font-semibold">
-      <a
+      <Link
         href="/#about"
         className="relative hover:text-cyan-300 transition duration-200 after:content-[''] after:block after:h-[2px] after:bg-cyan-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
       >
         About Us
-      </a>
-      <a
+      </Link>
+      <Link
         href="/#products"
         className="relative hover:text-cyan-300 transition duration-200 after:content-[''] after:block after:h-[2px] after:bg-cyan-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
       >
         Products
-      </a>
-      <a
+      </Link>
+      <Link
         href="/#contact"
         className="relative hover:text-cyan-300 transition duration-200 after:content-[''] after:block after:h-[2px] after:bg-cyan-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
       >
         Contact
-      </a>
+      </Link>
     </nav>
   </div>
 </header>
