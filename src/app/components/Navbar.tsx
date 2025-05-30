@@ -18,19 +18,19 @@ const Navbar = () => {
     {/* Navigation */}
     <nav className="flex items-center gap-4 sm:gap-8 text-sm sm:text-base font-semibold">
       <a
-        href="#about"
+        href="/#about"
         className="relative hover:text-cyan-300 transition duration-200 after:content-[''] after:block after:h-[2px] after:bg-cyan-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
       >
         About Us
       </a>
       <a
-        href="#products"
+        href="/#products"
         className="relative hover:text-cyan-300 transition duration-200 after:content-[''] after:block after:h-[2px] after:bg-cyan-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
       >
         Products
       </a>
       <a
-        href="#contact"
+        href="/#contact"
         className="relative hover:text-cyan-300 transition duration-200 after:content-[''] after:block after:h-[2px] after:bg-cyan-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
       >
         Contact
