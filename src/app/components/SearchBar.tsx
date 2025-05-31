@@ -13,7 +13,7 @@ const SearchBar = () => {
   const [bg, setBg] = useState(false)
   type Chemical = {
     name: string;
-    [key: string]: any;
+    [key: string]: string | number | boolean | null | undefined;
   };
   
   const [data, setData] = useState<Fuse.FuseResult<Chemical>[]>([]);
