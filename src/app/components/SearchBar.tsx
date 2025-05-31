@@ -11,7 +11,13 @@ const SearchBar = () => {
   const [focused, setFocused] = useState(false)
   const [Width, setWidth] = useState("40%")
   const [bg, setBg] = useState(false)
-  const [data, setData] = useState<any[]>([])
+  type Chemical = {
+    name: string;
+    [key: string]: any;
+  };
+  
+  const [data, setData] = useState<Fuse.FuseResult<Chemical>[]>([]);
+  
   
   // Combine all chemical arrays into a single array for Fuse
   const allChemicals = [
@@ -26,14 +32,14 @@ const SearchBar = () => {
   const fuse = new Fuse(allChemicals)
 
   function Clickevent() {
-    if (Width === '40%') {
-      setWidth('70%');
-    } else {
-      setWidth('40%');
-    }
-    setBg(!bg);
+  if (Width === '40%') {
+    setWidth('70%');
+  } else {
+    setWidth('40%');
   }
-  
+  setBg(!bg);
+}
+
   return (
     <motion.div
       className="max-w-md mx-auto "
