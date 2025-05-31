@@ -28,9 +28,14 @@ const SearchBar = () => {
   const fuse = new Fuse(allChemicals);
 
   function Clickevent() {
-    Width === '40%' ? setWidth('70%') : setWidth('40%');
+    if (Width === '40%') {
+      setWidth('70%');
+    } else {
+      setWidth('40%');
+    }
     setBg(!bg);
   }
+  
 
   return (
     <motion.div
