@@ -85,7 +85,7 @@ const SearchBar = () => {
          transition={{duration:0.5,ease:"easeInOut"}}
          > 
           <ul className="mt-2 bg-white/90 rounded shadow ">
-          {data.map((result: Fuse.FuseResult<Chemical>, idx: number) => (
+          {data.map((result: FuseResult<Chemical>, idx: number) => (
   <li key={idx} className="text-gray-700 py-4 px-2 hover:bg-gray-100 shadow">
     {result.item?.name || JSON.stringify(result.item)}
   </li>
