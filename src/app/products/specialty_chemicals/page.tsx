@@ -3,6 +3,7 @@ import data from '../../components/data.json'
 import * as motion from "motion/react-client"
 import Chem from "../../images/chemistry.png"
 import Image from 'next/image';
+import SearchBar from '@/app/components/SearchBar';
 // import { FlaskConical } from 'lucide-react'; 
 
 
@@ -39,9 +40,15 @@ const SpecialtyChem = () => {
         <h2 className="text-3xl font-bold text-blue-700 mb-8 text-center">
           Specialty Chemicals
         </h2>
+        <div className=' flex w-full justify-center items-center sm:pr-8 pr-4'>
+        <SearchBar></SearchBar>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {chemData.map((elem, idx) => (
-            <div
+            <motion.div
+              initial={{opacity:0,}}
+              whileInView={{opacity:1,}}
+              transition={{duration:0.5, ease:"easeInOut"}}
               key={idx}
               className="flex items-center space-x-4 p-4 rounded-xl transition-transform duration-300 hover:scale-105 hover:bg-blue-50" // Subtle background on hover
             >
@@ -52,7 +59,7 @@ const SpecialtyChem = () => {
               <li className="text-xl font-semibold text-gray-800 hover:text-blue-700 cursor-pointer">
                 {elem}
               </li>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

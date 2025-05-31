@@ -3,10 +3,13 @@ import Chem from "../images/biochemistry.png"
 import "../globals.css"
 import Link from 'next/link'
 import Image from 'next/image';
+import SearchBar from './SearchBar';
+
 
 const Navbar = () => {
   return (
-    <div className='w-screen flex justify-center items-center'><header className="bg-blue-500/30 backdrop-blur-md text-white px-4 py-3 shadow-lg fixed
+    <div className='w-screen flex flex-col justify-center items-center'>
+      <header className="bg-blue-500/30 backdrop-blur-md text-white px-4 py-3 shadow-lg fixed
      w-[95%] top-2 z-50 rounded-2xl">
   <div className="container mx-auto flex justify-between items-center">
     {/* Logo + Brand */}
@@ -46,6 +49,7 @@ const Navbar = () => {
     </nav>
   </div>
 </header>
+
 </div>
   )
 }

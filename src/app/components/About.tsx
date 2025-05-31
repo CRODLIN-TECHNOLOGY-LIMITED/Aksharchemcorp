@@ -13,7 +13,7 @@ const About = () => {
     >
       {/* Decorative background blobs - these add a subtle, organic visual effect */}
       {/* Requires the 'blob' animation keyframes in tailwind.config.js */}
-      <div className="absolute top-0 left-0 w-48 h-48 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-blob"></div> {/* Subtler blue blob */}
+       {/* Subtler blue blob */}
       <div className="absolute bottom-0 right-0 w-48 h-48 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-blob animation-delay-2000"></div> {/* Subtler indigo blob */}
 
       {/* Main content container, centered and with max-w-4xl for readability */}

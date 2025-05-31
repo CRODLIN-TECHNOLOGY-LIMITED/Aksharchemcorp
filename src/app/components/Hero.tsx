@@ -25,7 +25,7 @@ const Hero = () => {
   }, [images.length]);
 
   return (
-    <section className="relative h-[110vh] flex items-center justify-center text-center z-0 text-white overflow-hidden">
+    <section className="relative h-[110vh] flex flex-col items-center justify-center text-center z-0 text-white overflow-hidden">
    
       {/* Background images with transitions */}
       {images.map((image, index) => (
@@ -44,8 +44,10 @@ const Hero = () => {
       ))}
       
       {/* Content overlay */}
-      <div className="relative p-6 rounded z-10">
+      <div className='z-10 w-full h-[40%] pt-24'>
              <SearchBar></SearchBar>
+      </div>
+      <div className="relative p-6 rounded z-10 h-[60%]">
         <motion.h2 
           className="text-4xl md:text-5xl font-bold mb-4"
           initial={{ opacity: 0, x: 200 }}
@@ -53,7 +55,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           Trusted Chemical Distributor
-        </motion.h2>
+        </motion.h2> 
         <motion.p 
           className="text-lg md:text-xl font-bold"
           initial={{ opacity: 0, x: 200 }}
