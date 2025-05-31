@@ -2,6 +2,7 @@ import React from 'react'
 import data from '../../components/data.json'
 import * as motion from "motion/react-client"
 import Chemical from '../../images/chemical.png'
+import Image from 'next/image';
 
 const Petrochemicals = () => {
   const chemData = data.chemicals.petrochemicals;
@@ -17,7 +18,15 @@ const Petrochemicals = () => {
             transition={{duration:0.5,ease:"easeInOut"}}
             className="bg-blue-400 text-white rounded-lg flex items-center justify-center flex-col shadow-xl mb-10 h-60 "
           >
-            <img src={Chemical.src} className="h-[20vh]" alt="" />
+            <div className="relative w-32 h-32 mb-4">
+  <Image
+    src={Chemical}
+    alt="Specialty Chemicals"
+    fill
+    className="object-contain"
+  />
+</div>
+
             <h4 className="text-2xl font-bold mb-2 mt-2">Petrochemicals</h4>
             <p className=' hidden sm:block'>Reliable supply of top-grade industrial chemical solutions.</p>
 

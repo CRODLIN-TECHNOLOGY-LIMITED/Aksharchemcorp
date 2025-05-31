@@ -3,6 +3,7 @@ import data from '../../components/data.json'
 import * as motion from "motion/react-client"
 import Chemistry from '../../images/atom.png'
 import { Atom } from 'lucide-react';
+import Image from 'next/image';
 
 const Powder = () => {
   const chemData = data.chemicals.powder;
@@ -18,8 +19,16 @@ const Powder = () => {
             transition={{duration:0.5,ease:"easeInOut"}}
             className="bg-blue-400 text-white rounded-lg flex items-center justify-center flex-col shadow-xl mb-10 h-60 "
           >
-            <img src={Chemistry.src} className="h-[20vh]" alt="" />
-            <h4 className="text-2xl font-bold mb-2 mt-2">Petrochemicals</h4>
+            <div className="relative w-32 h-32 mb-4">
+  <Image
+    src={Chemistry}
+    alt="Specialty Chemicals"
+    fill
+    className="object-contain"
+  />
+</div>
+
+            <h4 className="text-2xl font-bold mb-2 mt-2">Powder</h4>
             <p className=' hidden sm:block'>Reliable supply of top-grade industrial chemical solutions.</p>
 
            

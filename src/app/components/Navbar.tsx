@@ -2,6 +2,7 @@ import React from 'react'
 import Chem from "../images/biochemistry.png"
 import "../globals.css"
 import Link from 'next/link'
+import Image from 'next/image';
 
 const Navbar = () => {
   return (
@@ -10,7 +11,13 @@ const Navbar = () => {
   <div className="container mx-auto flex justify-between items-center">
     {/* Logo + Brand */}
     <div className="flex items-center gap-3">
-      <img src={Chem.src} alt="logo" className="h-[8vh] sm:h-[9vh] drop-shadow-lg" />
+      <Image
+        src={Chem}
+        alt="Transchem Impex Logo"
+        width={50}
+        height={50}
+        className="rounded-full"
+      />
       <h1 className="hidden sm:block text-2xl sm:text-3xl font-bold tracking-wide">
         Transchem Impex
       </h1>

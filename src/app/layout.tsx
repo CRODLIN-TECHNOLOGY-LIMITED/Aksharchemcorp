@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import SearchBar from './components/SearchBar'
 // import Chem from './images/biochemistry.png'
 import { ReactNode } from 'react'
 

@@ -3,6 +3,7 @@ import data from '../../components/data.json'
 import * as motion from "motion/react-client"
 import Test from '../../images/test.png'
 import { FlaskConical } from 'lucide-react'; 
+import Image from 'next/image';
 
 const Solvents = () => {
   const chemData = data.chemicals.solvents;
@@ -18,8 +19,16 @@ const Solvents = () => {
             transition={{duration:0.5,ease:"easeInOut"}}
             className="bg-blue-400 text-white rounded-lg flex items-center justify-center flex-col shadow-xl mb-10 h-60 "
           >
-            <img src={Test.src} className="h-[20vh]" alt="" />
-            <h4 className="text-2xl font-bold mb-2 mt-2">Petrochemicals</h4>
+            <div className="relative w-32 h-32 mb-4">
+  <Image
+    src={Test}
+    alt="Specialty Chemicals"
+    fill
+    className="object-contain"
+  />
+</div>
+
+            <h4 className="text-2xl font-bold mb-2 mt-2">Solvents</h4>
             <p className=' hidden sm:block'>Reliable supply of top-grade industrial chemical solutions.</p>
 
            
