@@ -3,7 +3,8 @@ import Chem from "../images/biochemistry.png"
 import "../globals.css"
 import Link from 'next/link'
 import Image from 'next/image';
-import SearchBar from './SearchBar';
+import TransChem from "../images/trans-chem.png"
+// import SearchBar from './SearchBar';
 
 
 const Navbar = () => {
@@ -15,10 +16,10 @@ const Navbar = () => {
     {/* Logo + Brand */}
     <div className="flex items-center gap-3">
       <Image
-        src={Chem}
+        src={TransChem}
         alt="Transchem Impex Logo"
-        width={50}
-        height={50}
+        width={56}
+        height={56}
         className="rounded-full"
       />
       <h1 className="hidden sm:block text-2xl sm:text-3xl font-bold tracking-wide">

@@ -17,8 +17,8 @@ interface Chemical {
 const SearchBar = () => {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
-  const [Width, setWidth] = useState("40%")
-  const [bg, setBg] = useState(false)
+  // const [Width, setWidth] = useState("40%")
+  // const [bg, setBg] = useState(false)
   const [data, setData] = useState<any[]>([])
   
   // Combine all chemical arrays into a single array for Fuse
