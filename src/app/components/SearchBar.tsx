@@ -1,55 +1,48 @@
 'use client'
 import React, { useState } from 'react'
-import * as motion from 'motion/react-client'
+import * as motion from "motion/react-client"
 import { AnimatePresence } from 'motion/react'
-import { Search } from 'lucide-react'
+import { Search } from 'lucide-react' // optional icon package
 import Fuse from 'fuse.js'
 import chemicals from './data.json'
-
-type Chemical = {
-  name: string;
-  [key: string]: any;
-};
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
-  const [width, setWidth] = useState("40%")
+  const [Width, setWidth] = useState("40%")
   const [bg, setBg] = useState(false)
-  const [data, setData] = useState<Fuse.FuseResult<Chemical>[]>([])
-
-  const allChemicals: Chemical[] = [
+  const [data, setData] = useState<any[]>([])
+  
+  // Combine all chemical arrays into a single array for Fuse
+  const allChemicals = [
     ...chemicals.chemicals.solvents,
     ...chemicals.chemicals.petrochemicals,
     ...chemicals.chemicals.powder,
     ...chemicals.chemicals.specialty_chemicals
   ];
 
-  const fuse = new Fuse(allChemicals, { keys: ['name'] })
+  // console.log(allChemicals)
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value
-    setQuery(val)
-    const results = fuse.search(val)
-    setData(results)
-  }
+  const fuse = new Fuse(allChemicals)
 
-  function handleClick() {
-    width === "40%" ? setWidth("70%") : setWidth("40%")
+  function Clickevent(){
+    Width==="40%"?setWidth("70%"):setWidth("40%")
     setBg(!bg)
   }
 
   return (
     <motion.div
-      className="max-w-md mx-auto"
-      initial={{ opacity: 1, x: 200, width: "40%" }}
+      className="max-w-md mx-auto "
+      initial={{ opacity: 1, x: 200, width:"40%" }}
       whileInView={{ opacity: 1, x: 0 }}
-      animate={{ opacity: 1, width: "70%" }}
+      animate={{ opacity: 1, width:"70%" }}
       transition={{ duration: 0.5 }}
-      onClick={handleClick}
+      onClick={Clickevent}
     >
       <motion.div
-        className={`flex items-center border px-4 py-2 rounded-full ${focused ? 'bg-white/90' : 'bg-white/70'} shadow-md ${focused ? 'ring-1 ring-gray-100' : 'border-gray-300'}`}
+        className={`flex items-center border px-4 py-2  rounded-full ${focused ? 'bg-white/90' : 'bg-white/70'} shadow-md ${
+          focused ? 'ring-1 ring-gray-100' : 'border-gray-300'
+        }`}
         animate={{ scale: focused ? 1.02 : 1 }}
         transition={{ duration: 0.2 }}
       >
@@ -57,31 +50,34 @@ const SearchBar = () => {
         <input
           type="text"
           value={query}
-          onChange={handleInputChange}
+          onChange={(e) =>{ setQuery(e.target.value)
+            console.log(fuse.search(e.target.value))
+            setData(fuse.search(e.target.value))
+          }
+          }
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className="flex-1 outline-none bg-transparent text-gray-500 placeholder-gray-400 border-none"
+          className="flex-1 outline-none bg-transparent text-gray-500 placeholder-gray-400 border-none "
           placeholder="Search..."
         />
       </motion.div>
       <div>
         <AnimatePresence>
-          {data.length > 0 && focused && (
-            <motion.div
-              className="h-[20vh] overflow-scroll rounded m-5"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <ul className="mt-2 bg-white/90 rounded shadow">
-                {data.map((result, idx) => (
-                  <li key={idx} className="text-gray-700 py-4 px-2 hover:bg-gray-100 shadow">
-                    {result.item?.name || JSON.stringify(result.item)}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
+        {data.length > 0 && focused && (
+         <motion.div className=' h-[20vh] overflow-scroll rounded m-5'
+         initial={{opacity:0}}
+         animate={{opacity:1}}
+         transition={{duration:0.5,ease:"easeInOut"}}
+         > 
+          <ul className="mt-2 bg-white/90 rounded shadow ">
+            {data.map((result: any, idx: number) => (
+              <li key={idx} className="text-gray-700 py-4 px-2 hover:bg-gray-100 shadow">
+                {result.item?.name || JSON.stringify(result.item)}
+              </li>
+            ))}
+          </ul>
+          </motion.div>
+        )}
         </AnimatePresence>
       </div>
     </motion.div>
