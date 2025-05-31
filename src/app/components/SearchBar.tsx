@@ -4,6 +4,8 @@ import * as motion from "motion/react-client"
 import { AnimatePresence } from 'motion/react'
 import { Search } from 'lucide-react' // optional icon package
 import Fuse from 'fuse.js'
+import type { FuseResult } from 'fuse.js'
+
 import chemicals from './data.json'
 
 const SearchBar = () => {
@@ -16,8 +18,8 @@ const SearchBar = () => {
     [key: string]: string | number | boolean | null | undefined;
   };
   
-  const [data, setData] = useState<Fuse.FuseResult<Chemical>[]>([]);
-  
+  const [data, setData] = useState<FuseResult<Chemical>[]>([]);
+
   
   // Combine all chemical arrays into a single array for Fuse
   const allChemicals = [
