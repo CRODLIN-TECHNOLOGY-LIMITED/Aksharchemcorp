@@ -5,19 +5,14 @@ import { AnimatePresence } from 'motion/react'
 import { Search } from 'lucide-react' // optional icon package
 import Fuse from 'fuse.js'
 import chemicals from './data.json'
+import { div } from 'motion/react-client'
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
   const [Width, setWidth] = useState("40%")
   const [bg, setBg] = useState(false)
-  type Chemical = {
-    name: string;
-    [key: string]: any;
-  };
-  
-  const [data, setData] = useState<Fuse.FuseResult<Chemical>[]>([]);
-  
+  const [data, setData] = useState<any[]>([])
   
   // Combine all chemical arrays into a single array for Fuse
   const allChemicals = [
@@ -31,14 +26,10 @@ const SearchBar = () => {
 
   const fuse = new Fuse(allChemicals)
 
-  function Clickevent() {
-  if (Width === '40%') {
-    setWidth('70%');
-  } else {
-    setWidth('40%');
+  function Clickevent(){
+    Width==="40%"?setWidth("70%"):setWidth("40%")
+    setBg(!bg)
   }
-  setBg(!bg);
-}
 
   return (
     <motion.div
