@@ -2,7 +2,7 @@ import React from 'react'
 import data from '../../components/data.json'
 import * as motion from "motion/react-client"
 import Test from '../../images/test.png'
-import { FlaskConical } from 'lucide-react'; 
+
 import Image from 'next/image';
 
 const Solvents = () => {

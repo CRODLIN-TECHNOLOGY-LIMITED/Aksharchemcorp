@@ -2,7 +2,7 @@ import React from 'react'
 import data from '../../components/data.json'
 import * as motion from "motion/react-client"
 import Chemistry from '../../images/atom.png'
-import { Atom } from 'lucide-react';
+
 import Image from 'next/image';
 
 const Powder = () => {
