@@ -87,7 +87,7 @@ function ContactUsSection() {
       <div className="flex items-center justify-center mb-6">
         <Phone className="text-blue-600 mr-3" size={28} strokeWidth={1.5} />
         <a href="tel:+912235056017" className="text-xl text-blue-700 font-semibold hover:underline">
-          Office: 02235056017
+          Office: 9222209831
         </a>
       </div>
 
@@ -96,15 +96,15 @@ function ContactUsSection() {
       <div className="flex flex-col space-y-4 w-full">
         <a 
           href="mailto:transchemimpex@gmail.com" 
-          className="inline-flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-600 transition-colors duration-300 text-lg font-medium"
+          className="inline-flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-600 transition-colors duration-300 text-base sm:text-lg font-medium"
         >
           <Mail className="mr-3" size={20} /> transchemimpex@gmail.com
         </a>
         <a 
           href="mailto:logistics.tcipl11@gmail.com" 
-          className="inline-flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-600 transition-colors duration-300 text-lg font-medium"
+          className="inline-flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-600 transition-colors duration-300 text-base sm:text-lg font-medium"
         >
-          <Mail className="mr-3" size={20} /> logistics.tcipl11@gmail.com
+          <Mail className="mr-3" size={20} /> Import.transchemimpex@gmail.com
         </a>
       </div>
     </div>

@@ -20,12 +20,12 @@ const About = () => {
       <div className="container max-w-screen relative z-10"> {/* z-10 ensures content is above the blobs, max-w-4xl for readability */}
         {/* Main Heading */}
         <motion.h2
-          className="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-6 text-center tracking-tight"
+          className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-6 text-center tracking-tight"
           initial={{x:100,opacity:0}}
           whileInView={{x:0,opacity:1}}
           transition={{duration:0.6, ease:"easeInOut"}}
         >
-          About <span className="text-blue-600">Transchem Impex</span> {/* Adjusted span color for more cohesive blue theme */}
+          About <span className="text-gray-600">Transchem Impex</span> {/* Adjusted span color for more cohesive blue theme */}
         </motion.h2>
 
         {/* Tagline/Introductory sentence */}
@@ -35,7 +35,7 @@ const About = () => {
           whileInView={{x:0,opacity:1}}
           transition={{duration:0.6, ease:"easeInOut"}}
         >
-          <strong className="text-blue-600">Transchem Impex Private Limited</strong> — your trusted partner in the world of chemicals, solvents, and industrial materials.
+          <strong className="text-gray-800">Transchem Impex Private Limited</strong> — your trusted partner in the world of chemicals, solvents, and industrial materials.
         </motion.p>
 
         {/* Main content block - now without card styling */}
@@ -54,7 +54,7 @@ const About = () => {
 
               <div className=' flex justify-between items-center flex-col p-5'>
               <div className='w-full flex items-center justify-center m-7'>
-              <h3 className="text-5xl font-stretch-semi-condensed font-light text-indigo-600 mb-4 flex items-center text-center">
+              <h3 className="text-5xl font-stretch-semi-condensed font-light text-gray-600 mb-4 flex items-center text-center">
                 <Lightbulb className="mr-3 text-yellow-500" size={28} /> Our Vision & Journey
               </h3>
               </div>
@@ -70,14 +70,14 @@ const About = () => {
                   ease: 'easeInOut', // Smooth easing
                 }}
               >
-              <p className="text-lg italic leading-loose mb-6 text-white font-medium tracking-wide">
+              <p className="text-lg italic leading-loose mb-6 text-gray-800 font-medium tracking-wide">
                 Founded on <span className="text-blue-800 font-semibold not-italic">July 8th, 2011</span>, 
                 <span className="text-blue-600 font-bold not-italic"> Transchem Impex </span> was born from a clear vision — 
                 to deliver premium-quality products at highly competitive rates. Today, we proudly stand 
                 as a dependable and forward-thinking name in the chemical supply industry.
               </p>
 
-              <p className="text-lg italic leading-loose text-white font-medium tracking-wide">
+              <p className="text-lg italic leading-loose text-gray-900 font-medium tracking-wide">
                 We serve a wide range of sectors with unwavering efficiency, transparency, and integrity. 
                 Our journey has been one of continuous evolution — adapting to changing market needs and 
                 expanding our reach from local sourcing to global imports starting in 
@@ -95,27 +95,27 @@ const About = () => {
               transition={{duration:0.8, ease:"easeOut"}}
             >
               <div className='w-full flex items-center justify-center'>
-              <h3 className="text-4xl font-stretch-semi-condensed font-semibold text-blue-700 mb-4 flex items-center text-center">
-                <Star className="mr-3 text-green-500" size={28} /> What Makes Us Different
+              <h3 className="text-4xl font-stretch-semi-condensed font-semibold text-gray-700 mb-4 flex items-center text-center">
+                <Star className="mr-3 text-gray-300" size={28} /> What Makes Us Different
               </h3>
               </div>
               <ul className="space-y-4 text-lg text-gray-700">
                 <li className="flex items-start">
-                  <User className="mr-3 mt-1 text-blue-500 flex-shrink-0" size={24} />
+                  <User className="mr-3 mt-1 text-gray-500 flex-shrink-0" size={24} />
                   <div>
-                    <strong className="text-blue-600">Customer-Centric Approach:</strong> We prioritize your needs, offering tailored solutions and exceptional service.
+                    <strong className="text-gray-600">Customer-Centric Approach:</strong> We prioritize your needs, offering tailored solutions and exceptional service.
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <Globe className="mr-3 mt-1 text-blue-500 flex-shrink-0" size={24} /> {/* Changed to blue for consistency */}
+                  <Globe className="mr-3 mt-1 text-gray-500 flex-shrink-0" size={24} /> {/* Changed to blue for consistency */}
                   <div>
-                    <strong className="text-blue-600">Global Reach:</strong> Direct access to quality materials, on time and at the right price, through our expanding import capabilities.
+                    <strong className="text-gray-600">Global Reach:</strong> Direct access to quality materials, on time and at the right price, through our expanding import capabilities.
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <Handshake className="mr-3 mt-1 text-blue-500 flex-shrink-0" size={24} /> {/* Changed to blue for consistency */}
+                  <Handshake className="mr-3 mt-1 text-gray-500 flex-shrink-0" size={24} /> {/* Changed to blue for consistency */}
                   <div>
-                    <strong className="text-blue-600">Partnership Built on Trust:</strong> We believe in fostering strong, reliable relationships with our clients.
+                    <strong className="text-gray-600">Partnership Built on Trust:</strong> We believe in fostering strong, reliable relationships with our clients.
                   </div>
                 </li>
               </ul>
@@ -128,10 +128,10 @@ const About = () => {
           whileInView={{y:0,opacity:1}}
           transition={{duration:0.8, ease:"easeOut"}}
           >
-            <p className="text-2xl font-semibold text-blue-700 mb-4"> {/* Adjusted color */}
+            <p className="text-2xl font-semibold text-gray-700 mb-4"> {/* Adjusted color */}
               At Transchem Impex, we don’t just supply materials—we help you move forward with confidence.
             </p>
-            <p className="text-3xl font-extrabold text-blue-800">
+            <p className="text-3xl font-extrabold text-gray-800">
               Reliable. Responsive. Ready to serve.
             </p>
             <p className="text-xl font-medium text-gray-600 mt-4">

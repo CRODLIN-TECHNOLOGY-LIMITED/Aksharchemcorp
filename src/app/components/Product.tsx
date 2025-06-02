@@ -8,6 +8,7 @@ import Chemistry from "../images/chemistry.png"
 import * as motion from "motion/react-client"
 import Link from 'next/link'
 import Image from 'next/image';
+import SearchBar from './SearchBar'
 
 
 const Product = () => {
@@ -15,13 +16,18 @@ const Product = () => {
 
   return (
     <section id="products" className="py-12 px-4 bg-gray-100 text-center">
-      <h3 className="text-3xl font-semibold mb-8">Our Products</h3>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div className=' flex justify-between items-center w-full '>
+        <h3 className="text-xl sm:text-3xl font-semibold mb-8 ml-20 text-blue-400">Our Products</h3>
+        <div className='mr-20 mb-8'>
+             <SearchBar></SearchBar>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-1 max-w-6xl mx-auto">
         <Link href="/products/petrochemicals" className="contents">
           <motion.div
-            initial={{ scale: 1, opacity: 0, x: 100 }}
-            whileInView={{ scale: 1, x: 0, opacity: 1 }}
-            whileHover={{ scale: 1.3 }}
+            initial={{ scale: 0.9, opacity: 0, x: 100 }}
+            whileInView={{ scale: 0.9, x: 0, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 5 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl"
@@ -42,9 +48,9 @@ const Product = () => {
 
         <Link href="/products/solvents" className="contents">
           <motion.div
-            initial={{ scale: 1, opacity: 0, x: 100 }}
-            whileInView={{ scale: 1, x: 0, opacity: 1 }}
-            whileHover={{ scale: 1.3 }}
+            initial={{ scale: 0.9, opacity: 0, x: 100 }}
+            whileInView={{ scale: 0.9, x: 0, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 5 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
@@ -64,9 +70,9 @@ const Product = () => {
 
         <Link href="/products/powder" className="contents">
           <motion.div
-            initial={{ scale: 1, opacity: 0, x: 100 }}
-            whileInView={{ scale: 1, x: 0, opacity: 1 }}
-            whileHover={{ scale: 1.3 }}
+            initial={{ scale: 0.9, opacity: 0, x: 100 }}
+            whileInView={{ scale: 0.9, x: 0, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 5 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
@@ -85,9 +91,9 @@ const Product = () => {
         </Link>
         <Link href="/products/specialty_chemicals" className="contents">
           <motion.div
-            initial={{ scale: 1, opacity: 0, x: 100 }}
-            whileInView={{ scale: 1, x: 0, opacity: 1 }}
-            whileHover={{ scale: 1.3 }}
+            initial={{ scale: 0.9, opacity: 0, x: 100 }}
+            whileInView={{ scale: 0.9, x: 0, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 5 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">

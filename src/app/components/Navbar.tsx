@@ -22,8 +22,8 @@ const Navbar = () => {
         height={56}
         className="rounded-full"
       />
-      <h1 className="hidden sm:block text-2xl sm:text-3xl font-bold tracking-wide">
-        Transchem Impex
+      <h1 className="hidden sm:block text-2xl md:text-2xl sm:text-xl font-bold tracking-wide">
+        Transchem Impex Pvt. Ltd.
       </h1>
     </div>
 

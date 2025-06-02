@@ -2,68 +2,87 @@
 
 import React, { useState, useEffect } from 'react';
 import * as motion from "motion/react-client"
-import SearchBar from './SearchBar';
 import "../globals.css";
 
 const Hero = () => {
-  const images = [
-    'https://cdn.pixabay.com/photo/2016/11/21/13/20/port-1845350_1280.jpg',
-    'https://i.pinimg.com/736x/f0/ef/0a/f0ef0acc8286c3f49450ecfaadaebe54.jpg',
-    'https://arkaz.com/uploads/ct-items/g5xrvqri_xpo.jpg',
-  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const slides = [
+    {
+      image: 'https://cdn.pixabay.com/photo/2016/11/21/13/20/port-1845350_1280.jpg',
+      title: 'Trusted Chemical Distributor',
+      subtitle: 'Serving Industry Needs Since 2011'
+    },
+    {
+      image: 'https://i.pinimg.com/736x/f0/ef/0a/f0ef0acc8286c3f49450ecfaadaebe54.jpg',
+      title: 'Your Trusted Source for Quality Solvents.',
+      subtitle: 'Trusted Imports. Reliable Supply'
+    },
+    {
+      image: 'https://arkaz.com/uploads/ct-items/g5xrvqri_xpo.jpg',
+      title: 'More Than Supply',
+      subtitle: 'A Commitment to Quality'
+    }
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      setCurrentIndex((prevIndex) => 
+        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000);
+    }, 3000); // Increased duration for better visibility
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [slides.length]);
 
   return (
     <section className="relative h-[110vh] flex flex-col items-center justify-center text-center z-0 text-white overflow-hidden">
    
       {/* Background images with transitions */}
-      {images.map((image, index) => (
+      {slides.map((slide, index) => (
         <motion.div
-          key={image}
+          key={slide.image}
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${image}')` }}
+          style={{ backgroundImage: `url('${slide.image}')` }}
           initial={{ opacity: 0 }}
           animate={{ 
-            opacity: index === currentImageIndex ? 1 : 0,
-            transition: { duration: 1 }
+            opacity: index === currentIndex ? 1 : 0,
           }}
-          exit={{ opacity: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         />
       ))}
       
       {/* Content overlay */}
-      <div className='z-10 w-full h-[40%] pt-24'>
-             <SearchBar></SearchBar>
-      </div>
-      <div className="relative p-6 rounded z-10 h-[60%]">
-        <motion.h2 
-          className="text-4xl md:text-5xl font-bold mb-4"
-          initial={{ opacity: 0, x: 200 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Trusted Chemical Distributor
-        </motion.h2> 
-        <motion.p 
-          className="text-lg md:text-xl font-bold"
-          initial={{ opacity: 0, x: 200 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          Serving Industry Needs Since 2011
-        </motion.p>
+      <div className="flex items-center justify-center flex-col relative p-6 rounded z-10 h-[60%] w-full">
+        <div className="relative h-full w-full flex flex-col items-center justify-center">
+          {/* Title animation */}
+          <motion.div
+            key={`title-${currentIndex}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8 }}
+            className="absolute"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white drop-shadow-[0_0_2px_black]">
+              {slides[currentIndex].title}
+            </h2>
+          </motion.div>
+          
+          {/* Subtitle animation */}
+          <motion.div
+            key={`subtitle-${currentIndex}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="absolute mt-20"
+          >
+            <p className="text-lg md:text-xl font-bold text-white drop-shadow-[0_0_2px_black] mr-1">
+              {slides[currentIndex].subtitle}
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
