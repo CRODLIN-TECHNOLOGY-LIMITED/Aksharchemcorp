@@ -9,7 +9,7 @@ const Petrochemicals = () => {
   const chemData = data.chemicals.petrochemicals;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-blue-200 py-12 px-4 sm:px-0 mt-20">
+    <div className="min-h-screen bg-gradient-to-br from-white to-blue-200 py-12 px-4 sm:px-0 mt-20 overflow-clip">
         <motion.div className='flex justify-center items-center'>
           <motion.div
             initial={{width:"74vh"}}
@@ -20,13 +20,13 @@ const Petrochemicals = () => {
             className="bg-blue-400 text-white rounded-lg flex items-center justify-center flex-col shadow-xl mb-10 h-60 "
           >
             <div className="relative w-32 h-32 mb-4">
-  <Image
-    src={Chemical}
-    alt="Specialty Chemicals"
-    fill
-    className="object-contain"
-  />
-</div>
+              <Image
+                src={Chemical}
+                alt="Specialty Chemicals"
+                fill
+                className="object-contain"
+              />
+            </div>
 
             <h4 className="text-2xl font-bold mb-2 mt-2">Petrochemicals</h4>
             <p className=' hidden sm:block'>Reliable supply of top-grade industrial chemical solutions.</p>

@@ -9,7 +9,7 @@ const Solvents = () => {
   const chemData = data.chemicals.solvents;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-blue-200 py-12 px-4 sm:px-4 mt-20">
+    <div className="min-h-screen bg-gradient-to-br from-white to-blue-200 py-12 px-4 sm:px-4 mt-20 overflow-clip">
       <motion.div className='flex justify-center items-center'>
           <motion.div
             initial={{width:"74vh"}}
