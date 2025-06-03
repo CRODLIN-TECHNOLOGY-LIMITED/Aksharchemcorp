@@ -1,25 +1,25 @@
 'use client'
-import React, { useState,useRef } from 'react'
+import React, { useState } from 'react'
 import * as motion from "motion/react-client"
 import { AnimatePresence } from 'motion/react'
 import { Search } from 'lucide-react' // optional icon package
 import Fuse from 'fuse.js'
 import type { FuseResult } from 'fuse.js'
+
 import chemicals from './data.json'
-
-// Define the Chemical type based on your data structure
-interface Chemical {
-  name: string
-  // Add other properties if needed
-}
-
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
-  // const [Width, setWidth] = useState("40%")
-  // const [bg, setBg] = useState(false)
-  const [data, setData] = useState<any[]>([])
+  const [Width, setWidth] = useState("40%")
+  const [bg, setBg] = useState(false)
+  type Chemical = {
+    name: string;
+    [key: string]: string | number | boolean | null | undefined;
+  };
+  
+  const [data, setData] = useState<FuseResult<Chemical>[]>([]);
+
   
   // Combine all chemical arrays into a single array for Fuse
   const allChemicals = [
@@ -31,37 +31,38 @@ const SearchBar = () => {
 
   // console.log(allChemicals)
 
-  const fuse = new Fuse(allChemicals)
-
-
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const Focus = ()=>{
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+  const fuse = new Fuse(allChemicals, {
+    keys: ['name'], // or other keys you want
+    threshold: 0.6, // optional: controls fuzziness
+  });
+  
+  function Clickevent() {
+  if (Width === '40%') {
+    setWidth('70%');
+  } else {
+    setWidth('40%');
   }
-
+  setBg(!bg);
+}
 
   return (
     <motion.div
-      className=" sm:max-w-[320px] max-w-[260px] sm:ml-10 ml-5 hover:cursor-pointer"
-      initial={{ opacity: 1, x: 200, width:"30%" }}
+      className="max-w-md mx-auto "
+      initial={{ opacity: 1, x: 200, width:"40%" }}
       whileInView={{ opacity: 1, x: 0 }}
-      animate={{ opacity: 1, width:"100%" }}
+      animate={{ opacity: 1, width:"70%" }}
       transition={{ duration: 0.5 }}
-      onClick={Focus}
+      onClick={Clickevent}
     >
       <motion.div
-        className={`flex  border px-4 py-2  rounded-full ${focused ? 'bg-white/90' : 'bg-white/70'} shadow-md ${
+        className={`flex items-center border px-4 py-2  rounded-full ${focused ? 'bg-white/90' : 'bg-white/70'} shadow-md ${
           focused ? 'ring-1 ring-gray-100' : 'border-gray-300'
-        } `}
+        }`}
         animate={{ scale: focused ? 1.02 : 1 }}
         transition={{ duration: 0.2 }}
       >
-        <Search className="text-gray-400  h-5 mr-2 hover:cursor-pointer" />
+        <Search className="text-gray-400 w-5 h-5 mr-2" />
         <input
-          ref={inputRef}
           type="text"
           value={query}
           onChange={(e) =>{ setQuery(e.target.value)
@@ -71,7 +72,7 @@ const SearchBar = () => {
           }
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className=" outline-none bg-transparent text-gray-500 placeholder-gray-400 border-none hover:cursor-pointer"
+          className="flex-1 outline-none bg-transparent text-gray-500 placeholder-gray-400 border-none "
           placeholder="Search..."
         />
       </motion.div>

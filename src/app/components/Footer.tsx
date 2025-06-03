@@ -1,5 +1,8 @@
 import React from 'react'
 import "../globals.css"
+import Image from 'next/image';
+import Crordlin from "../images/logo.png"
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -7,8 +10,18 @@ const Footer = () => {
       <footer className="bg-blue-900 text-white py-4 text-center w-screen flex justify-between items-center px-18">
         <p className=' text-sm'>&copy; {new Date().getFullYear()} TransChem Impex Pvt Ltd
         . All rights reserved.</p>
-
-        <p className='text-sm'>Designed by Crodlin-Technology</p>
+        <Link href={"https://crodlin.in"} target="_blank" rel="noopener noreferrer" className='flex items-center gap-2'>
+        <div className='flex '>
+        <Image
+          src={Crordlin}
+          alt="Crodlin Tech Logo"
+          width={30}
+          height={30}
+          className="ml-2 rounded-full "
+          />
+        <p className='text-xs mt-2'>Designed by Crodlin-Tech</p>
+        </div>
+        </Link>
       </footer>
     </div>
   )

@@ -84,12 +84,17 @@ function ContactUsSection() {
       <h3 className="text-2xl font-bold text-blue-700 mb-4">Connect With Us</h3>
       
       {/* Phone Number */}
-      <div className="flex items-center justify-center mb-6">
-        <Phone className="text-blue-600 mr-3" size={28} strokeWidth={1.5} />
-        <a href="tel:+912235056017" className="text-xl text-blue-700 font-semibold hover:underline">
-          Office: 9222209831
-        </a>
-      </div>
+      <div className="flex items-start justify-center mb-6">
+  <Phone className="text-blue-600 mr-3 mt-1" size={28} strokeWidth={1.5} />
+  <div className="flex flex-col">
+    <a href="tel:+919222209831" className="text-xl text-blue-700 font-semibold hover:underline">
+      Office: 9222209831
+    </a>
+    <a href="tel:+912235056017" className="text-xl text-blue-700 font-semibold hover:underline mt-1">
+      02235056017
+    </a>
+  </div>
+</div>
 
       {/* Email Addresses */}
       <h4 className="text-xl font-bold text-gray-800 mb-4">Email Us Directly:</h4>

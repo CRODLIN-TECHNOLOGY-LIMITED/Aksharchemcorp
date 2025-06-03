@@ -1,5 +1,4 @@
 import React from 'react'
-import Chem from "../images/biochemistry.png"
 import "../globals.css"
 import Link from 'next/link'
 import Image from 'next/image';
@@ -14,6 +13,7 @@ const Navbar = () => {
      w-[95%] top-2 z-50 rounded-2xl">
   <div className="container mx-auto flex justify-between items-center">
     {/* Logo + Brand */}
+    <Link href="/" className="flex items-center gap-3">
     <div className="flex items-center gap-3">
       <Image
         src={TransChem}
@@ -26,7 +26,11 @@ const Navbar = () => {
         Transchem Impex Pvt. Ltd.
       </h1>
     </div>
+    </Link>
 
+    {/* Search Bar */}
+    {/* <div className="hidden sm:block w-1/3">
+      <SearchBar />
     {/* Navigation */}
     <nav className="flex items-center gap-4 sm:gap-8 text-sm sm:text-base font-semibold">
       <Link
