@@ -19,7 +19,7 @@ const Hero = () => {
       subtitle: 'Trusted Imports. Reliable Supply'
     },
     {
-      image: 'https://arkaz.com/uploads/ct-items/g5xrvqri_xpo.jpg',
+      image: 'https://img.freepik.com/free-photo/agricultural-silo_146671-19117.jpg?ga=GA1.1.1358960020.1747829231&semt=ais_hybrid&w=740',
       title: 'More Than Supply',
       subtitle: 'A Commitment to Quality'
     }
