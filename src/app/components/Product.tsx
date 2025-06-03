@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
 import Chemical from "../images/chemical.png"
 import Test from "../images/test.png"
 import Atom from "../images/atom.png"
