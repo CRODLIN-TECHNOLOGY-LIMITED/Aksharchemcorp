@@ -12,7 +12,7 @@ import SearchBar from './SearchBar'
 
 
 const Product = () => {
-  const [moreInfo, setMoreInfo] = useState("hidden")
+  
 
   return (
     <section id="products" className="py-12 px-4 bg-gray-100 text-center">
