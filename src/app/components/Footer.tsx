@@ -7,8 +7,8 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-blue-900 text-white py-4 text-center w-screen flex justify-between items-center px-18">
-        <p className=' text-sm'>&copy; {new Date().getFullYear()} TransChem Impex Pvt Ltd
+      <footer className="bg-blue-900 text-white py-4 text-center w-screen flex justify-between items-center px-2 sm:px-18">
+        <p className=' text-xs'>&copy; {new Date().getFullYear()} TransChem Impex Pvt Ltd
         . All rights reserved.</p>
         <Link href={"https://crodlin.in"} target="_blank" rel="noopener noreferrer" className='flex items-center gap-2'>
         <div className='flex '>
@@ -19,7 +19,7 @@ const Footer = () => {
           height={30}
           className="ml-2 rounded-full "
           />
-        <p className='text-xs mt-2'>Designed by Crodlin-Tech</p>
+        <p className='text-xs mt-2 hidden sm:flex'>Designed by Crodlin-Tech</p>
         </div>
         </Link>
       </footer>

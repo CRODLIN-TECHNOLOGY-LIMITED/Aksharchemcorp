@@ -64,7 +64,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="absolute"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white drop-shadow-[0_0_2px_black]">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white drop-shadow-[0_0_2px_black] mb-5 sm:mb-0">
               {slides[currentIndex].title}
             </h2>
           </motion.div>
@@ -78,7 +78,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="absolute mt-20"
           >
-            <p className="text-lg md:text-xl font-bold text-white drop-shadow-[0_0_2px_black] mr-1">
+            <p className="text-base md:text-xl font-bold text-white drop-shadow-[0_0_2px_black] mr-1 sm:mt-0">
               {slides[currentIndex].subtitle}
             </p>
           </motion.div>

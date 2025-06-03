@@ -116,13 +116,12 @@ function ContactUsSection() {
   </div>
 
   {/* Right Side - Map */}
-  <div className="w-full md:w-1/2 bg-gray-100 rounded-xl shadow-lg flex items-center justify-center
-   hover:cursor-pointer"
+  <div
+  className="w-full h-[300px] sm:h-[700px] md:w-1/2 bg-gray-100 rounded-xl shadow-lg flex items-center justify-center hover:cursor-pointer"
   onClick={Gmap}
-  >
-    {/* Replace this div with your actual Map component */}
-    <Map></Map>
-  </div>
+>
+  <Map />
+</div>
 </div>
         </div>
     </section>
