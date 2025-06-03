@@ -19,7 +19,7 @@ const Footer = () => {
           height={30}
           className="ml-2 rounded-full "
           />
-        <p className='text-xs mt-2 hidden sm:flex'>Designed by Crodlin-Tech</p>
+
         </div>
         </Link>
       </footer>

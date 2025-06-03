@@ -118,12 +118,6 @@ const Product = () => {
           </motion.div>
         </Link>
       </div>
-      <h3 className="text-xl font-semibold mt-8 hover:underline hover:cursor-pointer "
-        onClick={() => setMoreInfo(moreInfo === "hidden" ? "block" : "hidden")}>
-        Know more</h3>
-      <div className={`${moreInfo}`}>
-        <h1 className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eligendi commodi aspernatur magni ex soluta reprehenderit, molestiae voluptas error expedita nulla sequi! In quaerat expedita at sequi, temporibus tempora quisquam!</h1>
-      </div>
 
     </section>
   )
