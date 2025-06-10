@@ -25,11 +25,54 @@ const Product = () => {
     Our Products
   </motion.h3>
   <div className="w-full sm:w-[40%]">
-    <SearchBar />
+    <SearchBar prop={"all"} />
   </div>
 </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-1 max-w-6xl mx-auto">
+        <Link href="/products/solvents" className="contents">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0, x: 100 }}
+            whileInView={{ scale: 0.9, x: 0, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ rotate: 5 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
+            <div className="relative w-32 h-32 mb-4">
+              <Image
+                src={Test}
+                alt="Specialty Chemicals"
+                fill
+                className="object-contain"
+              />
+            </div>
+
+            <h4 className="text-xl font-bold mb-2">Solvents</h4>
+            <p>Wide range of acids, solvents, and specialty chemicals.</p>
+          </motion.div>
+          </Link>
+        <Link href="/products/powder" className="contents">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0, x: 100 }}
+            whileInView={{ scale: 0.9, x: 0, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ rotate: 5 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
+            <div className="relative w-32 h-32 mb-4">
+  <Image
+    src={Atom}
+    alt="Specialty Chemicals"
+    fill
+    className="object-contain"
+  />
+</div>
+
+            <h4 className="text-xl font-bold mb-2">Powder</h4>
+            <p>Tailored chemical supply services for unique requirements.</p>
+          </motion.div>
+        </Link>
+        
         <Link href="/products/petrochemicals" className="contents">
           <motion.div
             initial={{ scale: 0.9, opacity: 0, x: 100 }}
@@ -53,49 +96,7 @@ const Product = () => {
           </motion.div>
         </Link>
 
-        <Link href="/products/solvents" className="contents">
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0, x: 100 }}
-            whileInView={{ scale: 0.9, x: 0, opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ rotate: 5 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
-            <div className="relative w-32 h-32 mb-4">
-  <Image
-    src={Test}
-    alt="Specialty Chemicals"
-    fill
-    className="object-contain"
-  />
-</div>
 
-            <h4 className="text-xl font-bold mb-2">Solvents</h4>
-            <p>Wide range of acids, solvents, and specialty chemicals.</p>
-          </motion.div>
-        </Link>
-
-        <Link href="/products/powder" className="contents">
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0, x: 100 }}
-            whileInView={{ scale: 0.9, x: 0, opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ rotate: 5 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
-            <div className="relative w-32 h-32 mb-4">
-  <Image
-    src={Atom}
-    alt="Specialty Chemicals"
-    fill
-    className="object-contain"
-  />
-</div>
-
-            <h4 className="text-xl font-bold mb-2">Powder</h4>
-            <p>Tailored chemical supply services for unique requirements.</p>
-          </motion.div>
-        </Link>
         <Link href="/products/specialty_chemicals" className="contents">
           <motion.div
             initial={{ scale: 0.9, opacity: 0, x: 100 }}
