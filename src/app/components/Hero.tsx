@@ -3,23 +3,24 @@
 import React, { useState, useEffect } from 'react';
 import * as motion from "motion/react-client"
 import "../globals.css";
+import HeroImage from '../images/hero.jpg'
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
     {
-      image: 'https://cdn.pixabay.com/photo/2016/11/21/13/20/port-1845350_1280.jpg',
+      image: 'https://img.freepik.com/premium-photo/top-view-oil-barrels-forklift-truck-move-transportation-worker-help_478515-6919.jpg',
       title: 'Trusted Chemical Distributor',
       subtitle: 'Serving Industry Needs Since 2011'
     },
     {
-      image: 'https://i.pinimg.com/736x/f0/ef/0a/f0ef0acc8286c3f49450ecfaadaebe54.jpg',
+      image: HeroImage.src,
       title: 'Your Trusted Source for Quality Solvents.',
       subtitle: 'Trusted Imports. Reliable Supply'
     },
     {
-      image: 'https://img.freepik.com/free-photo/agricultural-silo_146671-19117.jpg?ga=GA1.1.1358960020.1747829231&semt=ais_hybrid&w=740',
+      image: 'https://media.istockphoto.com/id/1351708605/photo/tanker-trucks.jpg?s=612x612&w=0&k=20&c=V2YvlCDqawdQjlvQjpDRFKE-VzcnqVZttVqlxznIelo=',
       title: 'More Than Supply',
       subtitle: 'A Commitment to Quality'
     }

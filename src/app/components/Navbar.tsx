@@ -9,7 +9,7 @@ import TransChem from "../images/trans-chem.png"
 const Navbar = () => {
   return (
     <div className='w-screen flex flex-col justify-center items-center'>
-      <header className="bg-blue-500/30 backdrop-blur-md text-white px-4 py-3 shadow-lg fixed
+      <header className="bg-[#20B2AA]/30 backdrop-blur-md text-white px-4 py-3 shadow-lg fixed
      w-[95%] top-2 z-50 rounded-2xl">
   <div className="container mx-auto flex justify-between items-center">
     {/* Logo + Brand */}
@@ -23,7 +23,7 @@ const Navbar = () => {
         className="rounded-full"
       />
       <h1 className="hidden sm:block text-2xl md:text-2xl sm:text-xl font-bold tracking-wide">
-        Transchem Impex Pvt. Ltd.
+        Akshar Chem-Corp
       </h1>
     </div>
     </Link>

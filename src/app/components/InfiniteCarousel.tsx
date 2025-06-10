@@ -54,9 +54,9 @@ const InfiniteCarousel = () => {
   const totalOriginalWidth = carouselItems.length * (ITEM_WIDTH + ITEM_MARGIN_RIGHT);
 
   return (
-    <div className="py-16 bg-gradient-to-r from-gray-50 to-blue-200 overflow-hidden h-96 ">
+    <div className="py-16 bg-gradient-to-r from-gray-50 to-teal-200 overflow-hidden h-96 ">
       <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12">
-        Our <span className="text-blue-600">Client</span>
+        Our <span className="text-[#20B2AA]">Client</span>
       </h2>
       <div className="relative w-full ">
         <motion.div

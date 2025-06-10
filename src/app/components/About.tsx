@@ -9,7 +9,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="flex flex-col  py-16 bg-gradient-to-br from-white to-blue-200 overflow-hidden" // More white background with a subtle blue hint
+      className="flex flex-col  py-16 bg-gradient-to-br from-white to-teal-100 overflow-hidden" // More white background with a subtle blue hint
     >
       {/* Decorative background blobs - these add a subtle, organic visual effect */}
       {/* Requires the 'blob' animation keyframes in tailwind.config.js */}
@@ -47,7 +47,7 @@ const About = () => {
 
 
             <motion.div
-              className="p-4 md:p-8 will-change-transform flex flex-col bg-blue-400 shadow-xl w-full h-[83~vh] justify-center items-center" // Removed bg-white, shadow, border, and adjusted padding
+              className="p-4 md:p-8 will-change-transform flex flex-col bg-[#20B2AA] shadow-xl w-full h-[83~vh] justify-center items-center" // Removed bg-white, shadow, border, and adjusted padding
               initial={{y:200,opacity:0}} // Changed animation for a subtle fade-in from below
               whileInView={{y:0,opacity:1}}
               transition={{duration:0.8, ease:"easeOut"}}>

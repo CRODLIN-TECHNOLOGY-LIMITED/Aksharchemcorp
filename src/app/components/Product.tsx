@@ -17,7 +17,7 @@ const Product = () => {
   return (
     <section id="products" className="py-12 px-4 bg-gray-100 text-center">
      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center w-full gap-4 px-2 sm:ml-4 ml-0 mb-5">
-  <motion.h3 className="text-4xl sm:text-3xl font-semibold text-blue-400 ml-0 mr-2 sm:ml-5 sm:mr-0"
+  <motion.h3 className="text-4xl sm:text-3xl font-semibold text-[#20B2AA] ml-0 mr-2 sm:ml-5 sm:mr-0"
   initial={{ opacity: 0, x: -100 }}
   whileInView={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.5 }}>
@@ -37,7 +37,7 @@ const Product = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 5 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
+            className="hover:cursor-pointer bg-[#20B2AA] text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
             <div className="relative w-32 h-32 mb-4">
               <Image
                 src={Test}
@@ -58,7 +58,7 @@ const Product = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 5 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
+            className="hover:cursor-pointer bg-[#20B2AA] text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
             <div className="relative w-32 h-32 mb-4">
   <Image
     src={Atom}
@@ -80,7 +80,7 @@ const Product = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 5 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl"
+            className="hover:cursor-pointer bg-[#20B2AA] text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl"
           >
             <div className="relative w-32 h-32 mb-4">
               <Image
@@ -104,7 +104,7 @@ const Product = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ rotate: 5 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="hover:cursor-pointer bg-blue-400 text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
+            className="hover:cursor-pointer bg-[#20B2AA] text-white p-4 rounded-xl flex items-center justify-between flex-col shadow-xl">
             <div className="relative w-32 h-32 mb-4">
   <Image
     src={Chemistry}
