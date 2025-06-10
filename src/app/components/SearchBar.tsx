@@ -5,10 +5,9 @@ import { AnimatePresence } from 'motion/react'
 import { Search } from 'lucide-react' // optional icon package
 import Fuse from 'fuse.js'
 import type { FuseResult } from 'fuse.js'
-
 import chemicals from './data.json'
 
-const SearchBar = () => {
+const SearchBar = ({prop}:{prop:string}) => {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
   const [Width, setWidth] = useState("40%")
@@ -20,18 +19,61 @@ const SearchBar = () => {
   
   const [data, setData] = useState<FuseResult<Chemical>[]>([]);
 
-  
-  // Combine all chemical arrays into a single array for Fuse
-  const allChemicals = [
-    ...chemicals.chemicals.solvents,
-    ...chemicals.chemicals.petrochemicals,
-    ...chemicals.chemicals.powder,
+
+  function FuseResult(){
+
+    if (prop === "all") {
+    const allChemicals = [
+    ...chemicals.chemicals.solvents.expertise,
+    ...chemicals.chemicals.petrochemicals.expertise,
+    ...chemicals.chemicals.powder.expertise,
     ...chemicals.chemicals.specialty_chemicals
   ];
 
+  return allChemicals
+    }
+    else if (prop === "petro"){
+      const PetroChemicals = [
+    ...chemicals.chemicals.petrochemicals.expertise,
+    ...chemicals.chemicals.petrochemicals.other
+  ];
+
+  return PetroChemicals
+    }
+
+    else if (prop === "solvent"){
+      const solvent = [
+    ...chemicals.chemicals.solvents.expertise,
+    ...chemicals.chemicals.solvents.other,
+  ];
+
+  return solvent
+    }
+
+    else if(prop === "powder"){
+    const powder = [
+    ...chemicals.chemicals.powder.expertise,
+    ...chemicals.chemicals.powder.other,
+    ];
+
+    return powder
+    }
+
+    else{
+      const special = [
+    ...chemicals.chemicals.specialty_chemicals
+  ];
+
+  return special
+    }
+  }
+  
+  // Combine all chemical arrays into a single array for Fuse
+
+
   // console.log(allChemicals)
 
-  const fuse = new Fuse(allChemicals, {
+  const fuse = new Fuse(FuseResult(), {
     keys: ['name'], // or other keys you want
     threshold: 0.6, // optional: controls fuzziness
   });
@@ -86,10 +128,10 @@ const SearchBar = () => {
          > 
           <ul className="mt-2 bg-white/90 rounded shadow ">
           {data.map((result: FuseResult<Chemical>, idx: number) => (
-  <li key={idx} className="text-gray-700 py-4 px-2 hover:bg-gray-100 shadow">
-    {result.item?.name || JSON.stringify(result.item)}
-  </li>
-))}
+      <li key={idx} className="text-gray-700 py-4 px-2 hover:bg-gray-100 shadow">
+        {result.item?.name || JSON.stringify(result.item)}
+      </li>
+    ))}
 
           </ul>
           </motion.div>

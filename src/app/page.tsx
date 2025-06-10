@@ -5,7 +5,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Product from './components/Product'
 import ContactUsSection from './components/Contact'
-
+import InfiniteCarousel from './components/InfiniteCarousel'
 
 
 const page = () => {
@@ -14,6 +14,7 @@ const page = () => {
     <Hero></Hero>
     <About></About>
     <Product></Product>
+    <InfiniteCarousel></InfiniteCarousel>
     <ContactUsSection></ContactUsSection>
     {/* <Map></Map> */}
     </div>
