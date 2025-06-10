@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className="flex items-center gap-3">
       <Image
         src={TransChem}
-        alt="Transchem Impex Logo"
+        alt="Aksharchemcorp pvt. ltd.Logo"
         width={56}
         height={56}
         className="rounded-full"

@@ -44,7 +44,12 @@ const Petrochemicals = () => {
         <div className=' flex w-full justify-center items-center sm:pr-8 pr-4'>
         <SearchBar prop={"petro"}></SearchBar>
         </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 mt-8 text-left px-2 sm:px-0 border-b-2 border-teal-400 pb-2 w-fit">
+          Our expertise in...
+        </h1>
+
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
       {chemData.expertise.map((elem, idx) => (
         <motion.div
           initial={{opacity:0,}}
@@ -63,16 +68,28 @@ const Petrochemicals = () => {
         </motion.div>
       ))}
       </div>
-        <div className=' flex justify-center items-center p-2 font-semibold text-3xl w-full'>
-          <p className='hover:underline hover:cursor-pointer  '
-          onClick={
-            ()=>setOthers(!others)
-          }
-          >Click to see more products</p>
+        <div className=' flex justify-start items-center p-2 font-semibold text-3xl w-full'>
+        <button
+    onClick={() => setOthers(!others)}
+    className="flex items-center text-blue-700 hover:text-blue-900 text-base sm:text-lg font-semibold transition-all duration-300 group"
+  >
+    <span className="group-hover:underline">Also we suppply</span>
+    <svg
+      className={`ml-2 w-4 h-4 transition-transform duration-300 ${
+        others ? 'rotate-180' : 'rotate-0'
+      }`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
         </div>
              {   others &&
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-                    {chemData.other.map((elem:any, idx:number) => (
+                    {chemData.other.map((elem:string, idx:number) => (
                       <motion.div
                         initial={{opacity:0,}}
                         whileInView={{opacity:1,}}

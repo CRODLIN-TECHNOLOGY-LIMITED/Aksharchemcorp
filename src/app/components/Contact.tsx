@@ -71,7 +71,7 @@ function ContactUsSection() {
     <div className="bg-white p-8 rounded-xl shadow-lg border border-blue-100 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
       <MapPin className="text-[#20B2AA] mb-4" size={48} strokeWidth={1.5} />
       <h3 className="text-2xl font-bold text-[#20B2AA] mb-3">Our Location</h3>
-      <p className="text-lg text-gray-700 font-semibold">TransChem Impex Pvt Ltd</p>
+      <p className="text-lg text-gray-700 font-semibold">Aksharchemcorp pvt. ltd.Pvt Ltd</p>
       <p className="text-md text-gray-600 leading-relaxed">
         123 Gala Complex Premises CSL, 1st Floor, Dindayal Upadhayay Marg, (Dumping Road)
         <br />

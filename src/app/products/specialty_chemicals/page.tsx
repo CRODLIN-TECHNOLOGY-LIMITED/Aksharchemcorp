@@ -43,7 +43,12 @@ const SpecialtyChem = () => {
         <div className=' flex w-full justify-center items-center sm:pr-8 pr-4'>
         <SearchBar prop={"df"}></SearchBar>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 mt-8 text-left px-2 sm:px-0 border-b-2 border-teal-400 pb-2 w-fit">
+          Our expertise in...
+        </h1>
+
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {chemData.map((elem, idx) => (
             <motion.div
               initial={{opacity:0,}}

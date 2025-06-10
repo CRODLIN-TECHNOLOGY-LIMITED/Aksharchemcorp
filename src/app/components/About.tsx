@@ -25,7 +25,7 @@ const About = () => {
           whileInView={{x:0,opacity:1}}
           transition={{duration:0.6, ease:"easeInOut"}}
         >
-          About <span className="text-gray-600">Transchem Impex Pvt. Ltd.</span> {/* Adjusted span color for more cohesive blue theme */}
+          About <span className="text-gray-600">Aksharchemcorp pvt. ltd.</span> {/* Adjusted span color for more cohesive blue theme */}
         </motion.h2>
 
         {/* Tagline/Introductory sentence */}
@@ -35,7 +35,7 @@ const About = () => {
           whileInView={{x:0,opacity:1}}
           transition={{duration:0.6, ease:"easeInOut"}}   
         >
-          <strong className="text-gray-800">Transchem Impex Private Limited</strong> — your trusted partner in the world of chemicals, solvents, and industrial materials.
+          <strong className="text-gray-800">Aksharchemcorp pvt. ltd.Private Limited</strong> — your trusted partner in the world of chemicals, solvents, and industrial materials.
         </motion.p>
 
         {/* Main content block - now without card styling */}
@@ -72,7 +72,7 @@ const About = () => {
               >
               <p className="text-lg italic leading-loose mb-6 text-gray-800 font-medium tracking-wide">
                 Founded on <span className="text-blue-800 font-semibold not-italic">July 8th, 2011</span>, 
-                <span className="text-blue-600 font-bold not-italic"> Transchem Impex pvt. ltd. </span> was born from a clear vision — 
+                <span className="text-blue-600 font-bold not-italic"> Aksharchemcorp pvt. ltd. </span> was born from a clear vision — 
                 to deliver premium-quality products at highly competitive rates. Today, we proudly stand 
                 as a dependable and forward-thinking name in the chemical supply industry.
               </p>
@@ -129,13 +129,13 @@ const About = () => {
           transition={{duration:0.8, ease:"easeOut"}}
           >
             <p className="text-2xl font-semibold text-gray-700 mb-4"> {/* Adjusted color */}
-              At Transchem Impex Pvt. Ltd., we don’t just supply materials—we help you move forward with confidence.
+              At Aksharchemcorp pvt. ltd., we don’t just supply materials—we help you move forward with confidence.
             </p>
             <p className="text-3xl font-extrabold text-gray-800">
               Reliable. Responsive. Ready to serve.
             </p>
             <p className="text-xl font-medium text-gray-600 mt-4">
-              Welcome to Transchem Impex Private Limited.
+              Welcome to Aksharchemcorp Private Limited.
             </p>
           </motion.div>
         </motion.div>

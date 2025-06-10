@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="bg-teal-900 text-white py-4 text-center w-screen flex justify-between items-center px-2 sm:px-18">
-        <p className=' text-xs'>&copy; {new Date().getFullYear()} TransChem Impex Pvt Ltd
+        <p className=' text-xs'>&copy; {new Date().getFullYear()} Aksharchemcorp pvt. ltd.Pvt Ltd
         . All rights reserved.</p>
         <Link href={"https://crodlin.in"} target="_blank" rel="noopener noreferrer" className='flex items-center gap-2'>
         <div className='flex '>
