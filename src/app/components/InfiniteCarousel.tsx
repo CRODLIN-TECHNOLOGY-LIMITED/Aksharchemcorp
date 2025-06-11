@@ -56,7 +56,7 @@ const InfiniteCarousel = () => {
   return (
     <div className="py-16 bg-gradient-to-r from-gray-50 to-teal-200 overflow-hidden h-96 ">
       <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12">
-        Our <span className="text-[#20B2AA]">Client</span>
+        We <span className="text-[#20B2AA]">Deal with</span>
       </h2>
       <div className="relative w-full ">
         <motion.div
